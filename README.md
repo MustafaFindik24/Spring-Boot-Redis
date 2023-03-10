@@ -6,6 +6,22 @@ Redis (Remote Dictionary Server), açık kaynaklı noSQL tabanlı bir veritaban�
 
 # 🎯 Spring Boot uygulamasında Redis kullanımı
 
+Spring Boot projesine maven kullanarak pom.xml dosyasına dependency eklemesi gerçekleştirildi.
+
+```xml
+        <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+		</dependency>
+```
 
 ```java
 @Service
