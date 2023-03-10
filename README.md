@@ -92,6 +92,7 @@ public class RedisCacheController {
         return redisCacheService.runningMethod();
     }
 }
+```
 
 * Erişim sağlayıp tarayıcıya inspect attığımızda sayfanın ilk yüklemesinde belirtilen süre içerisinde dönüş sağlandığı görülebilir.
 
