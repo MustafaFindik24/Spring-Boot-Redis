@@ -71,7 +71,7 @@ public class RedisCacheService {
 }
 ```
 
-* Controller sınıfında localhost:8080/test pathi üzerinden erişilecek bir metot yazıldı.
+* Controller sınıfında localhost:8080/redis pathi üzerinden erişilecek bir metot yazıldı.
 
 ```java
 @RestController
@@ -92,4 +92,15 @@ public class RedisCacheController {
         return redisCacheService.runningMethod();
     }
 }
-```
+
+* Erişim sağlayıp tarayıcıya inspect attığımızda sayfanın ilk yüklemesinde belirtilen süre içerisinde dönüş sağlandığı görülebilir.
+
+![image](https://user-images.githubusercontent.com/91599453/224344182-9ac069a2-d923-4179-bfe2-4ba260211737.png)
+
+* Daha sonra tekrar çalıştırdığımızda bu sürenin çok ama çok azaldığı görülür. Çünkü artık sayfamız redis sayesinde cache bellekte tutulmuştur.
+
+![image](https://user-images.githubusercontent.com/91599453/224344453-65ded601-0d7a-45f9-a5e9-0f81762f9569.png)
+
+
+
+
