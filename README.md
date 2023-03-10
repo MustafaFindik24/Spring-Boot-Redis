@@ -4,13 +4,20 @@ Redis (Remote Dictionary Server), açık kaynaklı noSQL tabanlı bir veritaban�
 
 ![redis](https://user-images.githubusercontent.com/91599453/224338938-6a49c685-2d54-451f-821a-6ebe8c9fd410.png)
 
-## Spring Boot uygulamasında Redis kullanımı
+# 🎯 Spring Boot uygulamasında Redis kullanımı
 
-# 🎯 REGEX SERVICE ?
 
 ```java
-public class RegexUtils {
-    public String usernameRegex(String username) {
-        String regex = "^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$";
+@Service
+public class RedisCacheService {
+    @Cacheable(cacheNames = "myCacheMethod")
+    public String runningMethod() throws Exception{
+        Thread.sleep(5000L);
+        return "Metot çalıştırıldı.";
+    }
+    @CacheEvict(cacheNames = "myCacheMethod")
+    public void clearCaching(){
+        System.out.println("Cache temizlendi.");
     }
 }
+```
